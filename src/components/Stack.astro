@@ -3,63 +3,45 @@ const categories = [
   {
     name: 'Frontend',
     items: [
-      { name: 'Vue.js', icon: 'vue' },
-      { name: 'Astro', icon: 'astro' },
-      { name: 'React Native', icon: 'react' },
+      { name: 'Vue.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg' },
+      { name: 'Astro', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg' },
+      { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
     ],
   },
   {
     name: 'Backend',
     items: [
-      { name: 'Node.js', icon: 'node' },
-      { name: 'Express', icon: 'express' },
-      { name: 'Rust', icon: 'rust' },
+      { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
+      { name: 'Express', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg' },
+      { name: 'Rust', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg' },
     ],
   },
   {
-    name: 'Bases de Datos',
+    name: 'Databases',
     items: [
-      { name: 'Supabase', icon: 'supabase' },
-      { name: 'MySQL', icon: 'mysql' },
-      { name: 'Prisma', icon: 'prisma' },
+      { name: 'Supabase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg' },
+      { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' },
+      { name: 'Prisma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg' },
     ],
   },
   {
     name: 'DevOps & Tools',
     items: [
-      { name: 'AWS', icon: 'aws' },
-      { name: 'Docker', icon: 'docker' },
-      { name: 'GitHub Actions', icon: 'github' },
-      { name: 'Jenkins', icon: 'jenkins' },
-      { name: 'Nginx', icon: 'nginx' },
+      { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
+      { name: 'GitHub Actions', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg' },
+      { name: 'Jenkins', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg' },
+      { name: 'Nginx', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg' },
     ],
   },
 ];
-
-const iconPaths: Record<string, string> = {
-  vue: 'M1 3h4.5L12 13.5 18.5 3H23L12 22 1 3zm7,0h3l4 7.5L12 18 8.5 10.5 12 3z',
-  astro: 'M8.5 2.5L5 14.5c2.5-1 5-1.5 7-1.5s4.5.5 7 1.5L15.5 2.5c-.2-.7-.8-1-1.5-1h-4c-.7 0-1.3.4-1.5 1zM12 16c-2 0-3.5.5-4.5 1 .3 1.3 1.5 2.5 3 2.8.5.1 1 .2 1.5.2s1-.1 1.5-.2c1.5-.3 2.7-1.5 3-2.8-1-.5-2.5-1-4.5-1z',
-  react: 'M12 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z',
-  node: 'M12 1.5l9.5 5.5v11L12 23.5 2.5 18V7z',
-  express: 'M24 18v-1.5l-3-2.5 3-2.5V10l-4 3.5L16 10v1.5l3 2.5-3 2.5V18l4-3.5z',
-  rust: 'M23.8 12l-1.4-.8.1-.4 1.5-.4-.2-1-.5.1-.1-.5.4-.3-.4-.9-.5.2-.2-.4.3-.4-.6-.8-.4.3-.3-.3.1-.5-.8-.6-.3.4-.3-.2-.1-.5-.9-.4-.2.4-.4-.1-.2-.5-1-.2-.1.5-.4.1-.3-.4-1 .2.1.5-.3.2-.4-.3-.9.4.2.5-.2.3-.5-.2-.8.6.3.4-.1.4-.5.1-.6.8.4.3v.5l-.5.2-.4.9.5.3-.1.5-.4.2-.2 1 .5.1v.5l-.3.3.1 1 .5-.1.1.5-.2.4.4.8.5-.2.2.4-.1.5.6.6.4-.4.3.3.1.5.8.4.3-.4.3.2.2.5.9.2.1-.5.4.1.3.4 1-.2-.1-.5.4-.2.4.3.9-.5-.3-.4.2-.3.5.1.7-.6-.3-.4.1-.3.5-.2.6-.8-.4-.3v-.4l.4-.3.4-.9-.4-.2.1-.5.4-.3z',
-  supabase: 'M12 2L3.5 14.5h7V22l9-12.5h-7V2z',
-  mysql: 'M4 4v16h16V4H4zm8 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z',
-  prisma: 'M12 1L2 7v10l10 6 10-6V7L12 1zm0 3l7 4v8l-7 4-7-4V8l7-4z',
-  aws: 'M6.4 15.2L1 12l5.4-3.2v2.1h4.8v2.2H6.4v2.1zm11.2 0V13.1h-4.8v-2.2h4.8V8.8L23 12l-5.4 3.2z',
-  docker: 'M21 8.5c-.5-.3-1.7-.5-2.6-.3-.2-1.2-.9-2.2-1.8-3l-.4-.3-.3.4c-.4.6-.6 1.5-.5 2.2.1.5.3 1 .6 1.5-.3.2-.9.4-1.6.4H.5l-.1.5c-.1 1 .1 2.1.5 3 .5 1 1.3 1.8 2.4 2.3 1.2.5 3.2.8 5 .2 1.3-.4 2.5-1 3.4-2 .8-.8 1.3-1.7 1.7-2.8h1.5c.6 0 1.2-.1 1.7-.5.3-.2.5-.5.7-.8l.2-.5-.3-.2zM3.5 11.5h2v2h-2v-2zm3 0h2v2h-2v-2zm3 0h2v2h-2v-2zm3 0h2v2h-2v-2zm-9-3h2v2h-2v-2zm3 0h2v2h-2v-2zm3 0h2v2h-2v-2zm3 0h2v2h-2v-2z',
-  github: 'M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z',
-  jenkins: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z',
-  nginx: 'M6 3l6 18L18 3h-3l-3 10L9 3H6z',
-  socketio: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z',
-};
 ---
 
 <section class="stack section" id="stack">
   <div class="container">
     <div class="reveal">
-      <span class="section-label">Tecnologias</span>
-      <h2 class="section-title">Mi Stack</h2>
+      <span class="section-label">Technologies</span>
+      <h2 class="section-title">My Stack</h2>
     </div>
 
     <div class="stack-categories">
@@ -69,11 +51,14 @@ const iconPaths: Record<string, string> = {
           <div class="stack-items">
             {cat.items.map((item) => (
               <div class="stack-item glass-card">
-                <div class="stack-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d={iconPaths[item.icon] || 'M12 2L2 7v10l10 6 10-6V7z'} />
-                  </svg>
-                </div>
+                <img
+                  class="stack-item-icon"
+                  src={item.icon}
+                  alt={item.name}
+                  width="20"
+                  height="20"
+                  loading="lazy"
+                />
                 <span class="stack-item-name">{item.name}</span>
               </div>
             ))}
@@ -118,14 +103,17 @@ const iconPaths: Record<string, string> = {
   }
 
   .stack-item-icon {
-    color: var(--accent);
-    display: flex;
-    align-items: center;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
     transition: transform var(--transition-spring);
+    filter: brightness(0.9);
   }
 
   .stack-item:hover .stack-item-icon {
     transform: scale(1.2) rotate(-5deg);
+    filter: brightness(1.1);
   }
 
   .stack-item-name {

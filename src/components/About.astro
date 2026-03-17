@@ -1,0 +1,109 @@
+---
+
+---
+
+<section class="about section" id="about">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Sobre mi</span>
+      <h2 class="section-title">Lo que me mueve</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card glass-card reveal reveal-delay-1">
+        <div class="about-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+            <path d="M2 12h20"/>
+          </svg>
+        </div>
+        <h3 class="about-card-title">Futbol</h3>
+        <p class="about-card-text">
+          Tanto jugarlo como verlo. El futbol me ensena trabajo en equipo,
+          estrategia y la importancia de mantener la disciplina.
+        </p>
+      </div>
+
+      <div class="about-card glass-card reveal reveal-delay-2">
+        <div class="about-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+            <line x1="14" y1="4" x2="10" y2="20"/>
+          </svg>
+        </div>
+        <h3 class="about-card-title">Backend Development</h3>
+        <p class="about-card-text">
+          Me apasiona disenar arquitecturas robustas, APIs escalables
+          y sistemas que funcionen con solidez bajo presion.
+        </p>
+      </div>
+
+      <div class="about-card glass-card reveal reveal-delay-3">
+        <div class="about-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+            <line x1="9" y1="21" x2="9" y2="9"/>
+          </svg>
+        </div>
+        <h3 class="about-card-title">Retos del Frontend</h3>
+        <p class="about-card-text">
+          Disfruto transformar disenos en interfaces pixel-perfect,
+          resolviendo los puzzles que cada UI presenta.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .about-card {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .about-card-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    background: var(--accent-glow);
+    color: var(--accent);
+    transition: background var(--transition-base),
+                transform var(--transition-base);
+  }
+
+  .about-card:hover .about-card-icon {
+    background: var(--accent-glow-strong);
+    transform: scale(1.05);
+  }
+
+  .about-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .about-card-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

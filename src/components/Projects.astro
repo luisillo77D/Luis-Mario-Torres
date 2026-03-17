@@ -1,0 +1,152 @@
+---
+const projects = [
+  {
+    title: 'BankTracker',
+    description:
+      'Aplicacion movil de gestion financiera personal. Ayuda a rastrear tus gastos, monitorear tus saldos y evitar romper el banco con decisiones informadas.',
+    stack: ['React Native', 'Supabase', 'Expo'],
+    color: '#4ade80',
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/><path d="M6 16h4"/><path d="M14 16h4"/></svg>`,
+  },
+  {
+    title: 'PrestaGestion',
+    description:
+      'Sistema web para la gestion de prestamos. Lleva un control detallado de activos y facilita la cobranza semanal con dashboards claros y reportes automatizados.',
+    stack: ['Next.js', 'MySQL', 'Prisma'],
+    color: '#f59e0b',
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+  },
+];
+---
+
+<section class="projects section" id="projects">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Proyectos</span>
+      <h2 class="section-title">Trabajo destacado</h2>
+    </div>
+
+    <div class="projects-grid">
+      {projects.map((project, idx) => (
+        <div class={`project-card glass-card reveal reveal-delay-${idx + 1}`}>
+          <div class="project-header">
+            <div class="project-icon" style={`color: ${project.color}; background: ${project.color}15;`}>
+              <Fragment set:html={project.icon} />
+            </div>
+            <div class="project-number" style={`color: ${project.color}40;`}>
+              0{idx + 1}
+            </div>
+          </div>
+
+          <h3 class="project-title">{project.title}</h3>
+          <p class="project-description">{project.description}</p>
+
+          <div class="project-stack">
+            {project.stack.map((tech) => (
+              <span class="project-tech" style={`border-color: ${project.color}30; color: ${project.color};`}>
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <div class="project-line" style={`background: linear-gradient(90deg, ${project.color}, transparent);`}></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .project-card {
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .project-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition: transform var(--transition-spring);
+  }
+
+  .project-card:hover .project-icon {
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  .project-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    user-select: none;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+  }
+
+  .project-tech {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border: 1px solid;
+    border-radius: 100px;
+  }
+
+  .project-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .project-card:hover .project-line {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

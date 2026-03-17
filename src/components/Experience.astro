@@ -1,0 +1,213 @@
+---
+const experiences = [
+  {
+    role: 'Software Engineer',
+    company: 'IDT Tecnologias',
+    period: 'Agosto 2025 - Presente',
+    current: true,
+    description:
+      'Desarrollo de soluciones full-stack, implementacion de APIs RESTful, arquitectura de microservicios, y automatizacion de pipelines CI/CD.',
+    highlights: ['Full-stack development', 'APIs RESTful', 'CI/CD Pipelines', 'Arquitectura de software'],
+  },
+  {
+    role: 'Intern Developer',
+    company: 'IDT Tecnologias',
+    period: 'Febrero 2025 - Junio 2025',
+    current: false,
+    description:
+      'Inicio en el desarrollo profesional. Participacion en proyectos internos, aprendizaje de buenas practicas y colaboracion en equipo.',
+    highlights: ['Desarrollo web', 'Control de versiones', 'Trabajo colaborativo', 'Buenas practicas'],
+  },
+];
+---
+
+<section class="experience section" id="experience">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Experiencia</span>
+      <h2 class="section-title">Trayectoria profesional</h2>
+    </div>
+
+    <div class="timeline">
+      {experiences.map((exp, idx) => (
+        <div class={`timeline-item reveal reveal-delay-${idx + 1}`}>
+          <div class="timeline-marker">
+            <div class={`timeline-dot ${exp.current ? 'timeline-dot--active' : ''}`}></div>
+            {idx < experiences.length - 1 && <div class="timeline-line"></div>}
+          </div>
+
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">{exp.role}</h3>
+                <p class="timeline-company">{exp.company}</p>
+              </div>
+              <span class={`timeline-period ${exp.current ? 'timeline-period--current' : ''}`}>
+                {exp.current && <span class="period-dot"></span>}
+                {exp.period}
+              </span>
+            </div>
+
+            <p class="timeline-description">{exp.description}</p>
+
+            <div class="timeline-highlights">
+              {exp.highlights.map((h) => (
+                <span class="timeline-tag">{h}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    max-width: 800px;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: var(--space-lg);
+  }
+
+  .timeline-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: var(--space-xl);
+    flex-shrink: 0;
+  }
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--text-muted);
+    background: var(--bg-primary);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-dot--active {
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow-strong);
+  }
+
+  .timeline-dot--active::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    opacity: 0.3;
+    animation: subtlePulse 2s ease-in-out infinite;
+  }
+
+  .timeline-line {
+    width: 1px;
+    flex: 1;
+    background: linear-gradient(180deg, var(--text-muted) 0%, transparent 100%);
+    margin-top: var(--space-sm);
+  }
+
+  .timeline-content {
+    flex: 1;
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .timeline-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .timeline-role {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .timeline-company {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-top: 2px;
+  }
+
+  .timeline-period {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .timeline-period--current {
+    color: var(--accent);
+  }
+
+  .period-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: subtlePulse 2s ease-in-out infinite;
+  }
+
+  .timeline-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .timeline-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .timeline-tag {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 4px 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    color: var(--text-secondary);
+    transition: border-color var(--transition-fast),
+                color var(--transition-fast);
+  }
+
+  .timeline-tag:hover {
+    border-color: var(--border-accent);
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .timeline-header {
+      flex-direction: column;
+    }
+
+    .timeline-marker {
+      display: none;
+    }
+
+    .timeline-content {
+      border-left: 2px solid var(--border-subtle);
+    }
+  }
+</style>
